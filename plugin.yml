@@ -21,3 +21,15 @@ commands:
   gm:
     description: Gamemode <0|1|2|3>
     permission: fundeads.gm
+  food:
+    description: Food Max
+    permission: fundeads.food
+  f:
+    description: Food Max
+    permission: fundeads.food
+  heal:
+    description: Heal Max
+    permission: fundeads.heal
+  h:
+    description: Heal Max
+    permission: fundeads.heal
