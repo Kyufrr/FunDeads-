@@ -7,7 +7,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import fr.fundeads.commands.Broadcast;
+import fr.fundeads.commands.Food;
 import fr.fundeads.commands.GameMode;
+import fr.fundeads.commands.Heal;
 import fr.fundeads.commands.Heure;
 import fr.fundeads.commands.Menu;
 import fr.fundeads.commands.SetSpawn;
@@ -28,6 +30,10 @@ public class Main extends JavaPlugin implements Listener {
 		getCommand("setspawn").setExecutor(new SetSpawn());
 		getCommand("heure").setExecutor(new Heure());
 		getCommand("gm").setExecutor(new GameMode());
+		getCommand("food").setExecutor(new Food());
+		getCommand("f").setExecutor(new Food());
+		getCommand("heal").setExecutor(new Heal());
+		getCommand("h").setExecutor(new Heal());
 		recipeSaddle();
 		getServer().getPluginManager().registerEvents(new MainListener(this), this);
 	}
