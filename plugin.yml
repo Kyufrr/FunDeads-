@@ -1,0 +1,23 @@
+name: FunDeads
+version: 1.0.0
+main: fr.fundeads.main.Main
+author: FundeadsDev
+commands:
+  broadcast:
+    description: Alerte Tout Le Serveur
+    permission: fundeads.bc
+  bc:
+    permission: fundeads.bc
+  menu:
+    description: Menu [Admin | Joueurs]
+    permission: fundeads.menu
+  spawn:
+    description: Teleporte au Spawn
+  setspawn:
+    description: Lieu De Spawn Du Serveur
+    permission: fundeads.setspawn
+  heure:
+    description: Affiche L'Heure actuelle
+  gm:
+    description: Gamemode <0|1|2|3>
+    permission: fundeads.gm
