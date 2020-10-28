@@ -33,3 +33,14 @@ commands:
   h:
     description: Heal Max
     permission: fundeads.heal
+  back:
+    description: Retour A L Emplacement de votr mort !
+  home:
+    description: 1
+    permission: fundeads.home
+  sethome:
+    description: 2
+    permission: fundeads.sethome
+  delhome:
+    description: 3
+    permission: fundeads.delhome

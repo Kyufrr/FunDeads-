@@ -14,6 +14,7 @@ public class Food implements CommandExecutor {
 		if(sender instanceof Player) {
 			if(cmd.getName().equalsIgnoreCase("food") || cmd.getName().equalsIgnoreCase("f")) {
 				player.setFoodLevel(20);
+				player.sendMessage("§e[FunDeads]§a Votre Nourriture à été remis à fond !");
 			}
 		}
 		return false;

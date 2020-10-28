@@ -1,26 +1,43 @@
 package fr.fundeads.main;
 
 
+import java.util.HashMap;
+
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import fr.fundeads.commands.Back;
 import fr.fundeads.commands.Broadcast;
 import fr.fundeads.commands.Food;
 import fr.fundeads.commands.GameMode;
 import fr.fundeads.commands.Heal;
 import fr.fundeads.commands.Heure;
+import fr.fundeads.commands.Home;
 import fr.fundeads.commands.Menu;
 import fr.fundeads.commands.SetSpawn;
 import fr.fundeads.commands.Spawn;
 
 public class Main extends JavaPlugin implements Listener {
 	
+	public static HashMap<String, Location> back = new HashMap<>();
+	
+	public static Main instance;
+	
+	public static Main getInstance() {
+		return instance;
+		
+	}
+	
 	@Override
 	public void onEnable() {
 		
 		saveDefaultConfig();
+		
+		instance = this;
 		
 		System.out.println("[FunDeads] The Plugin has been Enabled");
 		getCommand("broadcast").setExecutor(new Broadcast());
@@ -34,6 +51,10 @@ public class Main extends JavaPlugin implements Listener {
 		getCommand("f").setExecutor(new Food());
 		getCommand("heal").setExecutor(new Heal());
 		getCommand("h").setExecutor(new Heal());
+		getCommand("back").setExecutor(new Back());
+		getCommand("home").setExecutor(new Home());
+		getCommand("sethome").setExecutor(new Home());
+		getCommand("delhome").setExecutor(new Home());
 		recipeSaddle();
 		getServer().getPluginManager().registerEvents(new MainListener(this), this);
 	}
@@ -42,6 +63,7 @@ public class Main extends JavaPlugin implements Listener {
 	public void onDisable() {
 		System.out.println("[FunDeads] The Plugin has been Disabled");
 	}
+	  
 	
 	private void recipeSaddle() {
 		ItemStack saddle = new ItemStack(Material.OBSIDIAN);

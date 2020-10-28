@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -29,6 +30,15 @@ public class MainListener implements Listener {
 		this.main = main;
 	}
 
+	@EventHandler
+	public void OnDeath(PlayerDeathEvent event) {
+		
+		Player player = event.getEntity();
+		
+		Main.back.put(player.getName(), player.getLocation());
+	}
+	
+	
 	@EventHandler
 	public void OnRespawn(PlayerRespawnEvent event) {
 		
@@ -56,7 +66,6 @@ public class MainListener implements Listener {
 		Date d = new Date();
 		
 		Player player = event.getPlayer();
-		player.getInventory().clear();
 		
 		
 		if(player.hasPermission("fundeads.*")) {
