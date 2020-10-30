@@ -10,7 +10,7 @@ Java Edition required. WorldEdit is compatible with Bukkit, Spigot, Paper, and S
 
 This place contains the Java code for WorldEdit, but if you want to just use WorldEdit, get the mod or plugin from these pages:
 
-* For the server plugin: **[Pre-Alpha Here]** https://www.spigotmc.org/resources/fundeads.85182/ 
+* For the server plugin: **[Pre-Alpha Here]** https://www.spigotmc.org/resources/fundeads.85182/ , [**Stable Version Here**] https://dev.bukkit.org/projects/fundeads
 
 Submitting Your Changes
 ------------
