@@ -7,6 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.craftbukkit.libs.jline.console.internal.ConsoleRunner;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -20,6 +21,11 @@ public class Menu implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
 		Player player = (Player) sender;
+		
+		if(sender instanceof ConsoleRunner) {
+			sender.sendMessage("NOPE !");
+		}
+		if(sender instanceof Player) {
 		
 		if(args.length == 1) {
 			if(args[0].equalsIgnoreCase("admin") || args[0].equalsIgnoreCase("guia")) {
@@ -42,7 +48,7 @@ public class Menu implements CommandExecutor {
 				
 				ItemStack lava = new ItemStack(Material.LAVA_BUCKET, 1);
 				ItemMeta lavaM = lava.getItemMeta();
-				lavaM.setDisplayName("[§4UNIQUE§f] §cArrêt D'Urgence Du SERVEUR !");
+				lavaM.setDisplayName("§cArrêt D'Urgence Du SERVEUR !");
 				lavaM.addEnchant(Enchantment.DURABILITY, 200, true);
 				lavaM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 				lava.setItemMeta(lavaM);
@@ -50,7 +56,7 @@ public class Menu implements CommandExecutor {
 				ItemStack rl = new ItemStack(Material.REDSTONE_COMPARATOR, 1);
 				ItemMeta rlM = rl.getItemMeta();
 				rlM.setDisplayName("§aReload");
-				rlM.setLore(Arrays.asList("§l§4(Risque Probable D'Arrêt A Cause de Plusieurs Plugins A Recharger !)"));
+				rlM.setLore(Arrays.asList("§l§4(Risque Probable D'Arrêt [Cause : Plusieurs Plugins à Recharger] !)"));
 				rl.setItemMeta(rlM);
 				
 				
@@ -84,9 +90,15 @@ public class Menu implements CommandExecutor {
 				inv.setItem(6, gm3);
 				inv.setItem(7, gm0);
 				
+				if(player.hasPermission("fundeads.menu.op")) {
 				player.openInventory(inv);
+				} else {
+					player.sendMessage("§cInacessible !");
+				}
 				
-			} else if(args[0].equalsIgnoreCase("joueur") || args[0].equalsIgnoreCase("gui")) {
+			}
+			
+			if(args[0].equalsIgnoreCase("joueur") || args[0].equalsIgnoreCase("gui")) {
 				
 			Inventory inv = Bukkit.createInventory(null, 18, "§c[Menu]");
 			
@@ -118,14 +130,17 @@ public class Menu implements CommandExecutor {
 			
 			player.openInventory(inv);
 			}
-			}
-			else {
-				player.sendMessage("§cUSAGE > /menu <guia/gui>");
-			}
+		  }
+		}
 		
 		if(args.length == 0) {
 			player.sendMessage("§cUSAGE > /menu <guia/gui>");
 		}
+		
+		if(args.length >= 2) {
+			player.sendMessage("§cUSAGE > /menu <guia/gui>");
+		}
+		
 		return false;
 	}
 }

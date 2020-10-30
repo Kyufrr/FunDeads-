@@ -1,5 +1,5 @@
 name: FunDeads
-version: 1.0.0
+version: 1.0.1
 main: fr.fundeads.main.Main
 author: FundeadsDev
 commands:
@@ -36,11 +36,11 @@ commands:
   back:
     description: Retour A L Emplacement de votr mort !
   home:
-    description: 1
+    description: Aller a un Home !
     permission: fundeads.home
   sethome:
-    description: 2
+    description: Defenir un Home !
     permission: fundeads.sethome
   delhome:
-    description: 3
+    description: Retirer un Home !
     permission: fundeads.delhome

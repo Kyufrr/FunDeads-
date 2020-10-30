@@ -66,31 +66,30 @@ public class Main extends JavaPlugin implements Listener {
 	  
 	
 	private void recipeSaddle() {
-		ItemStack saddle = new ItemStack(Material.OBSIDIAN);
+		ItemStack obsidian = new ItemStack(Material.OBSIDIAN);
 		
-		ShapedRecipe recipe = new ShapedRecipe(saddle);
+		ShapedRecipe obsi = new ShapedRecipe(obsidian);
 		
-		recipe.shape("LLL","SIS","SSS");
-		recipe.setIngredient('L', Material.STONE);
-		recipe.setIngredient('S', Material.STONE);
-		recipe.setIngredient('I', Material.DIAMOND);
+		obsi.shape("SSS","SIS","SSS");
+		obsi.setIngredient('S', Material.STONE);
+		obsi.setIngredient('I', Material.DIAMOND);
 		
-		getServer().addRecipe(recipe);
+		getServer().addRecipe(obsi);
 		
 		ItemStack cookie = new ItemStack(Material.COOKIE);
 		
-		ShapedRecipe recipe1 = new ShapedRecipe(cookie);
+		ShapedRecipe cookiee = new ShapedRecipe(cookie);
 		
-		recipe1.shape("LLL","SSS","III");
-		recipe1.setIngredient('L', Material.SEEDS);
-		recipe1.setIngredient('S', Material.MILK_BUCKET);
-		recipe1.setIngredient('I', Material.BREAD);
+		cookiee.shape("LLL","SSS","III");
+		cookiee.setIngredient('L', Material.SEEDS);
+		cookiee.setIngredient('S', Material.MILK_BUCKET);
+		cookiee.setIngredient('I', Material.WHEAT);
 		
-		getServer().addRecipe(recipe1);
+		getServer().addRecipe(cookiee);
 	}
 }
 
 
 // L L L
-// S S S = Sadlle
+// S S S = Obsidian
 // S I S

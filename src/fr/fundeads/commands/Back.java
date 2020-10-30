@@ -23,6 +23,8 @@ public class Back implements CommandExecutor {
 				
 				p.sendMessage("§aTéléportation Confirmé !");
 				p.teleport(Main.back.get(p.getName()));
+				
+				Main.back.remove(p.getName(), p.getLocation());
 			} else {
 				p.sendMessage("§cVous n'êtes jamais mort !");
 			}

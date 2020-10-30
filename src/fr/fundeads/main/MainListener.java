@@ -135,7 +135,7 @@ public class MainListener implements Listener {
 			ItemStack rl = new ItemStack(Material.REDSTONE_COMPARATOR, 1);
 			ItemMeta rlM = rl.getItemMeta();
 			rlM.setDisplayName("§aReload");
-			rlM.setLore(Arrays.asList("§l§4(Risque Probable D'Arrêt A Cause de Plusieurs Plugins A Recharger !)"));
+			rlM.setLore(Arrays.asList("§l§4(Risque Probable D'Arrêt [Cause : Plusieurs Plugins à Recharger] !)"));
 			rl.setItemMeta(rlM);
 			
 			

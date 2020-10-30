@@ -39,21 +39,21 @@ public class GameMode implements CommandExecutor {
 					if(target != null) {
 						
 						if(args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival")) {
-							p.sendMessage("§e[FunDeads] §9Passage En Mode Survie à " + target.getName());
+							p.sendMessage("§e[FunDeads] §9Passage En Mode Survie à §E" + target.getName());
 							target.setGameMode(org.bukkit.GameMode.SURVIVAL);
-							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Survie Par " + p.getName());
+							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Survie Par §e" + p.getName());
 						} else if(args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative")) {
-							p.sendMessage("§e[FunDeads] §9Passage En Mode Créative à " + target.getName());
+							p.sendMessage("§e[FunDeads] §9Passage En Mode Créative à §e" + target.getName());
 							target.setGameMode(org.bukkit.GameMode.CREATIVE);
-							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Creative Par " + p.getName());
+							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Creative Par §e" + p.getName());
 						} else if(args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure")) {
-							p.sendMessage("§e[FunDeads] §9Passage En Mode Adventure à " + target.getName());
+							p.sendMessage("§e[FunDeads] §9Passage En Mode Adventure à §e" + target.getName());
 							target.setGameMode(org.bukkit.GameMode.ADVENTURE);
-							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Adventure Par " + p.getName());
+							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Adventure Par §e" + p.getName());
 						} else if(args[0].equalsIgnoreCase("3") || args[0].equalsIgnoreCase("spectator")) {
-							p.sendMessage("§e[FunDeads] §9Passage En Mode Spectateur à " + target.getName());
+							p.sendMessage("§e[FunDeads] §9Passage En Mode Spectateur à §e" + target.getName());
 							target.setGameMode(org.bukkit.GameMode.SPECTATOR);
-							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Spectateur Par " + p.getName());
+							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Spectateur Par §e" + p.getName());
 						} else {
 							p.sendMessage("§cUSAGE > /gm <0|1|2|3> <player>");
 						}
