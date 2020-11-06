@@ -21,12 +21,12 @@ public class Back implements CommandExecutor {
 		} else {
 			if(Main.back.containsKey(p.getName())) {
 				
-				p.sendMessage("§aTéléportation Confirmé !");
+				p.sendMessage("§aTéléportation Confirmed !");
 				p.teleport(Main.back.get(p.getName()));
 				
 				Main.back.remove(p.getName(), p.getLocation());
 			} else {
-				p.sendMessage("§cVous n'êtes jamais mort !");
+				p.sendMessage("§c You isn't dead !");
 			}
 		}
 		

@@ -61,11 +61,11 @@ public class Home implements CommandExecutor {
 					if(Main.getInstance().getConfig().contains("home."+ p.getUniqueId().toString() +"."+ args[0])) {
 						World w = Bukkit.getServer().getWorld(Main.getInstance().getConfig().getString("home."+ p.getUniqueId().toString() +"."+ args[0] + ".world"));
 						
-						double  x = Main.getInstance().getConfig().getDouble("home."+ p.getUniqueId().toString() +"."+ args[0] + ".x");
-						double  y = Main.getInstance().getConfig().getDouble("home."+ p.getUniqueId().toString() +"."+ args[0] + ".y");
-						double  z = Main.getInstance().getConfig().getDouble("home."+ p.getUniqueId().toString() +"."+ args[0] + ".z");
-						double  pitch = Main.getInstance().getConfig().getDouble("home."+ p.getUniqueId().toString() +"."+ args[0] + ".pitch");
-						double  yaw = Main.getInstance().getConfig().getDouble("home."+ p.getUniqueId().toString() +"."+ args[0] + ".yaw");
+						double x = Main.getInstance().getConfig().getDouble("home."+ p.getUniqueId().toString() +"."+ args[0] + ".x");
+						double y = Main.getInstance().getConfig().getDouble("home."+ p.getUniqueId().toString() +"."+ args[0] + ".y");
+						double z = Main.getInstance().getConfig().getDouble("home."+ p.getUniqueId().toString() +"."+ args[0] + ".z");
+						double pitch = Main.getInstance().getConfig().getDouble("home."+ p.getUniqueId().toString() +"."+ args[0] + ".pitch");
+						double yaw = Main.getInstance().getConfig().getDouble("home."+ p.getUniqueId().toString() +"."+ args[0] + ".yaw");
 						
 						p.teleport(new Location(w, x, y, z, (float) yaw, (float) pitch));
 						p.sendMessage("§aVous avez Bien été Téléporté Au Home §e" + args[0] + "§c !");

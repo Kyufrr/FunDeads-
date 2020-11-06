@@ -13,7 +13,7 @@ public class Spawn implements CommandExecutor {
 		if(sender instanceof Player) {
 				if(cmd.getName().equalsIgnoreCase("spawn")) {
 					
-			player.sendMessage("§e[FunDeads]§aVous avez été téléporté au spawn");
+			player.sendMessage("§e[FunDeads]§aYou have been teleported to Spawn !");
 			player.teleport(player.getWorld().getSpawnLocation());
 		}
 		}

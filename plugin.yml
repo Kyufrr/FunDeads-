@@ -4,7 +4,7 @@ main: fr.fundeads.main.Main
 author: FundeadsDev
 commands:
   broadcast:
-    description: Alerte Tout Le Serveur
+    description: Send Message to all Server !
     permission: fundeads.bc
   bc:
     permission: fundeads.bc
@@ -12,12 +12,12 @@ commands:
     description: Menu [Admin | Joueurs]
     permission: fundeads.menu
   spawn:
-    description: Teleporte au Spawn
+    description: Goto to Spawn
   setspawn:
-    description: Lieu De Spawn Du Serveur
+    description: Set Spawn of this Server
     permission: fundeads.setspawn
   heure:
-    description: Affiche L'Heure actuelle
+    description: Show The Time Actually
   gm:
     description: Gamemode <0|1|2|3>
     permission: fundeads.gm
@@ -34,13 +34,19 @@ commands:
     description: Heal Max
     permission: fundeads.heal
   back:
-    description: Retour A L Emplacement de votr mort !
+    description: Goto to Death Emplacement !
   home:
-    description: Aller a un Home !
+    description: Goto a Home !
     permission: fundeads.home
   sethome:
-    description: Defenir un Home !
+    description: Set an Home !
     permission: fundeads.sethome
   delhome:
-    description: Retirer un Home !
+    description: Delete a Home !
     permission: fundeads.delhome
+  vanish:
+    description: Vanished You !
+    permission: fundeads.vanish
+  freeze:
+    description: Freeze An Player !
+    permission: fundeads.freeze

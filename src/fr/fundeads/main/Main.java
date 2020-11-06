@@ -5,7 +5,10 @@ import java.util.HashMap;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -13,19 +16,24 @@ import org.bukkit.plugin.java.JavaPlugin;
 import fr.fundeads.commands.Back;
 import fr.fundeads.commands.Broadcast;
 import fr.fundeads.commands.Food;
+import fr.fundeads.commands.Freeze;
 import fr.fundeads.commands.GameMode;
 import fr.fundeads.commands.Heal;
 import fr.fundeads.commands.Heure;
 import fr.fundeads.commands.Home;
 import fr.fundeads.commands.Menu;
-import fr.fundeads.commands.SetSpawn;
 import fr.fundeads.commands.Spawn;
+import fr.fundeads.commands.Vanish;
+import net.md_5.bungee.api.ChatColor;
 
 public class Main extends JavaPlugin implements Listener {
 	
 	public static HashMap<String, Location> back = new HashMap<>();
 	
+	public HashMap<Player, Location> frozenPlayers = new HashMap<>();
+	
 	public static Main instance;
+	
 	
 	public static Main getInstance() {
 		return instance;
@@ -39,12 +47,11 @@ public class Main extends JavaPlugin implements Listener {
 		
 		instance = this;
 		
-		System.out.println("[FunDeads] The Plugin has been Enabled");
+		System.out.println(ChatColor.GREEN + "[FunDeads] The Plugin has been Enabled");
 		getCommand("broadcast").setExecutor(new Broadcast());
 		getCommand("bc").setExecutor(new Broadcast());
 		getCommand("menu").setExecutor(new Menu());
 		getCommand("spawn").setExecutor(new Spawn());
-		getCommand("setspawn").setExecutor(new SetSpawn());
 		getCommand("heure").setExecutor(new Heure());
 		getCommand("gm").setExecutor(new GameMode());
 		getCommand("food").setExecutor(new Food());
@@ -55,17 +62,37 @@ public class Main extends JavaPlugin implements Listener {
 		getCommand("home").setExecutor(new Home());
 		getCommand("sethome").setExecutor(new Home());
 		getCommand("delhome").setExecutor(new Home());
+		getCommand("vanish").setExecutor(new Vanish());
+		getCommand("freeze").setExecutor(new Freeze(this));
+		
 		recipeSaddle();
+		
 		getServer().getPluginManager().registerEvents(new MainListener(this), this);
+		getServer().getPluginManager().registerEvents(this, this);
 	}
 	
 	@Override
 	public void onDisable() {
-		System.out.println("[FunDeads] The Plugin has been Disabled");
+		
+		System.out.println(ChatColor.RED + "[FunDeads] The Plugin has been Disabled");
 	}
-	  
+	
+	public void onTab() {
+			
+		}
+	 
+	@EventHandler
+    public void onPlayerMoveBlock(PlayerMoveEvent e){
+        if(!frozenPlayers.containsKey(e.getPlayer())){
+            return;
+        }
+        if(e.getFrom().getBlockX() != e.getTo().getBlockX() || e.getFrom().getBlockZ() != e.getTo().getBlockZ()){
+            e.getPlayer().teleport(frozenPlayers.get(e.getPlayer()));
+        }
+    }
 	
 	private void recipeSaddle() {
+		
 		ItemStack obsidian = new ItemStack(Material.OBSIDIAN);
 		
 		ShapedRecipe obsi = new ShapedRecipe(obsidian);

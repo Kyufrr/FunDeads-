@@ -22,6 +22,8 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import fr.fundeads.commands.Vanish;
+
 public class MainListener implements Listener {
 	
 	private Main main;
@@ -39,6 +41,7 @@ public class MainListener implements Listener {
 	}
 	
 	
+	
 	@EventHandler
 	public void OnRespawn(PlayerRespawnEvent event) {
 		
@@ -47,7 +50,7 @@ public class MainListener implements Listener {
 		ItemStack boussole = new ItemStack(Material.COMPASS, 1);
 		ItemMeta boussoleM = boussole.getItemMeta();
 		boussoleM.setDisplayName("§c[Menu]");
-		boussoleM.setLore(Arrays.asList("§aCela Peut Vous Aidez Au Cas-où."));
+		boussoleM.setLore(Arrays.asList("§aCan help you."));
 		boussoleM.addEnchant(Enchantment.DURABILITY, 200, true);
 		boussoleM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		boussole.setItemMeta(boussoleM);
@@ -69,9 +72,13 @@ public class MainListener implements Listener {
 		
 		
 		if(player.hasPermission("fundeads.*")) {
-			player.sendMessage("§e[FunDeads] §cBonjour Maître ! Il est §a" + format.format(d));
+			player.sendMessage("§e[FunDeads] §cHello Master ! The Time is §a" + format.format(d));
 		}
 		
+		// [Vanish]
+		for(Player p : Vanish.vanished) {
+			p.hidePlayer(p);
+		}
 		
 		// Retour Au Spawn à la connexion
 		player.teleport(player.getWorld().getSpawnLocation());
@@ -81,7 +88,7 @@ public class MainListener implements Listener {
 		ItemStack boussole = new ItemStack(Material.COMPASS, 1);
 		ItemMeta boussoleM = boussole.getItemMeta();
 		boussoleM.setDisplayName("§c[Menu]");
-		boussoleM.setLore(Arrays.asList("§aCela Peut Vous Aidez Au Cas-où."));
+		boussoleM.setLore(Arrays.asList("§aCan help you."));
 		boussoleM.addEnchant(Enchantment.DURABILITY, 200, true);
 		boussoleM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		boussole.setItemMeta(boussoleM);
@@ -104,7 +111,7 @@ public class MainListener implements Listener {
 			
 			if(player.isOp()) {
 			if(action == Action.RIGHT_CLICK_AIR) {
-				player.sendMessage("§c[Menu Admin FunDeads] Bonjour !");
+				player.sendMessage("§c[Menu Admin FunDeads] Hello !");
 			}
 			}
 			
@@ -112,22 +119,22 @@ public class MainListener implements Listener {
 			
 			ItemStack beacon = new ItemStack(Material.BEACON, 1);
 			ItemMeta BeaconM = beacon.getItemMeta();
-			BeaconM.setDisplayName("§aAnnoncer §fUne §cMaintenance.");
+			BeaconM.setDisplayName("§aSend §fAn Message §cMaintenance.");
 			beacon.setItemMeta(BeaconM);
 			
 			ItemStack anvil = new ItemStack(Material.ANVIL, 1);
 			ItemMeta anvilM = anvil.getItemMeta();
-			anvilM.setDisplayName("§8Activer §cLa §eWhitelist.");
+			anvilM.setDisplayName("§8Activate §cThe §eWhitelist.");
 			anvil.setItemMeta(anvilM);
 			
 			ItemStack feather = new ItemStack(Material.FEATHER, 1);
 			ItemMeta featherM = feather.getItemMeta();
-			featherM.setDisplayName("§9Désactiver §fLa §4Whitelist.");
+			featherM.setDisplayName("§9Désactivate §fThe §4Whitelist.");
 			feather.setItemMeta(featherM);
 			
 			ItemStack lava = new ItemStack(Material.LAVA_BUCKET, 1);
 			ItemMeta lavaM = lava.getItemMeta();
-			lavaM.setDisplayName("[§4UNIQUE§f] §cArrêt D'Urgence Du SERVEUR !");
+			lavaM.setDisplayName("§cSTOP THE SERVER !");
 			lavaM.addEnchant(Enchantment.DURABILITY, 200, true);
 			lavaM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 			lava.setItemMeta(lavaM);
@@ -135,7 +142,7 @@ public class MainListener implements Listener {
 			ItemStack rl = new ItemStack(Material.REDSTONE_COMPARATOR, 1);
 			ItemMeta rlM = rl.getItemMeta();
 			rlM.setDisplayName("§aReload");
-			rlM.setLore(Arrays.asList("§l§4(Risque Probable D'Arrêt [Cause : Plusieurs Plugins à Recharger] !)"));
+			rlM.setLore(Arrays.asList("§l§4 (Probable Risk of Stopping [Cause: Plugins overload]!)"));
 			rl.setItemMeta(rlM);
 			
 			
@@ -172,8 +179,8 @@ public class MainListener implements Listener {
 			if(player.isOp()) {
 			player.openInventory(inv);
 			} else {
-				player.sendMessage("§cEchec et maths :/ (accès refusé !)");
-				System.out.println("[FunDeads] " + player.getName() + " a essayer d'acceder au menu admin !");
+				player.sendMessage("§cFailure and Maths :/ (Access denied !)");
+				System.out.println("[FunDeads] " + player.getName() + " as try to open the menu admin !");
 			}
 		}
 
@@ -203,7 +210,7 @@ public class MainListener implements Listener {
 			if(player.isOp()) {
 			if(current.getType() == Material.ANVIL) {
 				player.closeInventory();
-				player.sendMessage("§aLa Whitelist est Activé !");
+				player.sendMessage("§aThe Whitelist as Activated !");
 				Bukkit.setWhitelist(true);
 				Bukkit.reloadWhitelist();
 			}
@@ -212,7 +219,7 @@ public class MainListener implements Listener {
 			if(player.isOp()) {
 			if(current.getType() == Material.FEATHER) {
 				player.closeInventory();
-				player.sendMessage("§cLa Whitelist est Désactivé !");
+				player.sendMessage("§cThe Whitelist as Désactivated !");
 				Bukkit.setWhitelist(false);
 				Bukkit.reloadWhitelist();
 			}
@@ -221,7 +228,7 @@ public class MainListener implements Listener {
 			if(player.isOp()) {
 			if(current.getType() == Material.LAVA_BUCKET) {
 				player.closeInventory();
-				Bukkit.broadcastMessage("TRACE D'Arrêt D'urgence du server par " + player.getName());
+				Bukkit.broadcastMessage("Emergency shutdown of the server by " + player.getName());
 				Bukkit.shutdown();
 			}
 			}
@@ -229,7 +236,7 @@ public class MainListener implements Listener {
 			if(player.isOp()) {
 			if(current.getType() == Material.WOOD_SWORD) {
 				player.closeInventory();
-				player.sendMessage("§9Passage En Gamemode Creative !");
+				player.sendMessage("§9Switching to Creative Gamemode !");
 				player.setGameMode(GameMode.CREATIVE);
 			}
 			}
@@ -237,7 +244,7 @@ public class MainListener implements Listener {
 			if(player.isOp()) {
 			if(current.getType() == Material.STONE_SWORD) {
 				player.closeInventory();
-				player.sendMessage("§9Passage En Gamemode Aventure !");
+				player.sendMessage("§9Switching to Adventure Gamemode !");
 				player.setGameMode(GameMode.ADVENTURE);
 			}
 			}
@@ -245,7 +252,7 @@ public class MainListener implements Listener {
 			if(player.isOp()) {
 			if(current.getType() == Material.GOLD_SWORD) {
 				player.closeInventory();
-				player.sendMessage("§9Passage En Gamemode Spectateur !");
+				player.sendMessage("§9Switching to Spectator Gamemode !");
 				player.setGameMode(GameMode.SPECTATOR);
 			}
 			}
@@ -253,7 +260,7 @@ public class MainListener implements Listener {
 			if(player.isOp()) {
 			if(current.getType() == Material.DIAMOND_SWORD) {
 				player.closeInventory();
-				player.sendMessage("§9Passage En Gamemode Survie !");
+				player.sendMessage("§9Switching to Survival Gamemode !");
 				player.setGameMode(GameMode.SURVIVAL);
 			}
 			}
@@ -264,6 +271,11 @@ public class MainListener implements Listener {
 				Bukkit.broadcastMessage("§9Reload !");
 				Bukkit.reload();
 			}
+			}
+			
+			if(current.getType() == Material.WOOD_STAIRS) {
+				player.closeInventory();
+				player.sendMessage("§l§aHELLO !");
 			}
 			
 		}

@@ -20,8 +20,7 @@ public class Heure implements CommandExecutor {
 		
 		if(sender instanceof Player) {
 			if(cmd.getName().equalsIgnoreCase("heure")) {
-			player.sendMessage("§e[FunDeads] Il est §a" + format.format(d));
-			System.out.println("[FunDeads] Il est " + format.format(d));
+			player.sendMessage("§e[FunDeads] The Time Is §a" + format.format(d));
 			}
 		}
 			

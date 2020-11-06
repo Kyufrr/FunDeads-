@@ -12,6 +12,8 @@ public class Broadcast implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
 		Player player = (Player) sender;
 		if(sender instanceof Player) {
+			
+			
 			if(cmd.getName().equalsIgnoreCase("broadcast") || cmd.getName().equalsIgnoreCase("bc")) {
 				
 				if(args.length == 0) {
@@ -24,7 +26,11 @@ public class Broadcast implements CommandExecutor {
 					for(String part : args) {
 						bc.append(part + " ");
 					}
-					Bukkit.broadcastMessage("§f[§c" + player.getName() + "§f]§e " + bc.toString());
+					if(player.isOp()) {
+					Bukkit.broadcastMessage("§f[ §cMessage§f ]§e " + bc.toString());
+					} else {
+						Bukkit.broadcastMessage("§f[§c" + player.getName() + "§f]§e " + bc.toString());
+					}
 				}
 				
 			}
