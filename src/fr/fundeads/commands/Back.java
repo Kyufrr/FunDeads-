@@ -9,6 +9,12 @@ import fr.fundeads.main.Main;
 
 public class Back implements CommandExecutor {
 
+	private Main main;
+
+	public Back(Main main) {
+		this.main = main;
+	}
+	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
@@ -16,17 +22,17 @@ public class Back implements CommandExecutor {
 		
 		if(args.length >= 1) {
 			
-			p.sendMessage("§cError !");
+			p.sendMessage("Â§cError !");
 			
 		} else {
 			if(Main.back.containsKey(p.getName())) {
 				
-				p.sendMessage("§aTéléportation Confirmed !");
+				p.sendMessage(main.getConfig().getString("back.message.teleportation"));
 				p.teleport(Main.back.get(p.getName()));
 				
 				Main.back.remove(p.getName(), p.getLocation());
 			} else {
-				p.sendMessage("§c You isn't dead !");
+				p.sendMessage(main.getConfig().getString("back.message.not-death"));
 			}
 		}
 		

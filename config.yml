@@ -1,4 +1,21 @@
 menu:
    annonces:
-     maintenance: "§c[§fALERT§c] §eLe Serveur va Entrer En Maintenance !"
-# Proposé des idées de config !
+     maintenance: "Â§c[Â§fALERTÂ§c] Â§eThe Server Is Going into Maintenance! !"
+back:
+   message:
+     teleportation: "Â§aTeleportation Confirmed !"
+     not-death: "Â§c You isn't dead !"
+
+spawn:
+  world: world
+  x: 0
+  y: 33.0
+  z: 0
+  yaw: 0
+  pitch: 0
+
+###########################
+#                         #
+#      HOME PLAYERS       #
+#                         #
+###########################

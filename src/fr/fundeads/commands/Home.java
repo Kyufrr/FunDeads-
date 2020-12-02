@@ -21,7 +21,7 @@ public class Home implements CommandExecutor {
 				Player p = (Player) sender;
 				
 				if(args.length == 0) {
-					p.sendMessage("§cUSAGE > /sethome <name>");
+					p.sendMessage("Â§cUSAGE > /sethome <name>");
 					return false;
 				}
 				
@@ -34,12 +34,12 @@ public class Home implements CommandExecutor {
 					Main.getInstance().getConfig().set("home." + p.getUniqueId().toString() + "." + args[0] + ".pitch", p.getEyeLocation().getPitch());
 					Main.getInstance().getConfig().set("home." + p.getUniqueId().toString() + "." + args[0] + ".yaw", p.getEyeLocation().getYaw());
 					Main.getInstance().saveConfig();
-					p.sendMessage("§aVotre Home " + args[0] + " à bien été défini !");
+					p.sendMessage("Â§aVotre Home " + args[0] + " Ã  bien Ã©tÃ© dÃ©fini !");
 					return false;
 				}
 				
 				if(args.length >= 2) {
-					p.sendMessage("§cUSAGE > /sethome <name>");
+					p.sendMessage("ï¿½cUSAGE > /sethome <name>");
 					return false;
 				}
 				
@@ -52,7 +52,7 @@ public class Home implements CommandExecutor {
 				Player p = (Player) sender;
 				
 				if(args.length == 0) {
-					p.sendMessage("§cUSAGE > /home <name>");
+					p.sendMessage("Â§cUSAGE > /home <name>");
 					return false;
 				}
 				
@@ -68,18 +68,18 @@ public class Home implements CommandExecutor {
 						double yaw = Main.getInstance().getConfig().getDouble("home."+ p.getUniqueId().toString() +"."+ args[0] + ".yaw");
 						
 						p.teleport(new Location(w, x, y, z, (float) yaw, (float) pitch));
-						p.sendMessage("§aVous avez Bien été Téléporté Au Home §e" + args[0] + "§c !");
+						p.sendMessage("Â§aVous avez Bien Ã©tÃ© TÃ©lÃ©portÃ© Au Home Â§e" + args[0] + "Â§c !");
 						return false;
 						
 					} else {
-						p.sendMessage("§cL'home " + args[0] + " n'existe pas !");
+						p.sendMessage("Â§cL'home " + args[0] + " n'existe pas !");
 						return false;
 					}
 					
 				}
 				
 				if(args.length >= 2) {
-					p.sendMessage("§cUSAGE > /home <name>");
+					p.sendMessage("Â§cUSAGE > /home <name>");
 					return false;
 				}
 				
@@ -92,7 +92,7 @@ public class Home implements CommandExecutor {
 				Player p = (Player) sender;
 				
 				if(args.length == 0) {
-					p.sendMessage("§cUSAGE > /delhome <name>");
+					p.sendMessage("Â§cUSAGE > /delhome <name>");
 					return false;
 				}
 				
@@ -100,15 +100,15 @@ public class Home implements CommandExecutor {
 					if(Main.getInstance().getConfig().contains("home."+ p.getUniqueId().toString() +"."+ args[0])) {
 						Main.getInstance().getConfig().set("home."+ p.getUniqueId().toString() +"."+ args[0], null);
 						Main.getInstance().saveConfig();
-						p.sendMessage("§aL'Home " + args[0] + "à bien été retirer !");
+						p.sendMessage("Â§aL'Home " + args[0] + "Ã  bien Ã©tÃ© retirer !");
 					} else {
-						p.sendMessage("§cL'home " + args[0] + " n'existe pas !");
+						p.sendMessage("Â§cL'home " + args[0] + " n'existe pas !");
 						return false;
 					}
 				}
 				
 				if(args.length >= 2) {
-					p.sendMessage("§cUSAGE > /delhome <name>");
+					p.sendMessage("Â§cUSAGE > /delhome <name>");
 					return false;
 				}
 				

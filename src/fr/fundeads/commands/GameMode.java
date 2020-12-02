@@ -17,19 +17,19 @@ public class GameMode implements CommandExecutor {
 				if(args.length == 1) {
 					
 					if(args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival")) {
-						p.sendMessage("§e[FunDeads] §9Passage En Mode Survie !");
+						p.sendMessage("Â§e[FunDeads] Â§9Passage En Mode Survie !");
 						p.setGameMode(org.bukkit.GameMode.SURVIVAL);
 					} else if(args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative")) {
-						p.sendMessage("§e[FunDeads] §9Passage En Mode Creative !");
+						p.sendMessage("Â§e[FunDeads] Â§9Passage En Mode Creative !");
 						p.setGameMode(org.bukkit.GameMode.CREATIVE);
 					} else if(args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure")) {
-						p.sendMessage("§e[FunDeads] §9Passage En Mode Aventure !");
+						p.sendMessage("Â§e[FunDeads] Â§9Passage En Mode Aventure !");
 						p.setGameMode(org.bukkit.GameMode.ADVENTURE);
 					} else if(args[0].equalsIgnoreCase("3") || args[0].equalsIgnoreCase("spectator")) {
-						p.sendMessage("§e[FunDeads] §9Passage En Mode Spectateur !");
+						p.sendMessage("Â§e[FunDeads] Â§9Passage En Mode Spectateur !");
 						p.setGameMode(org.bukkit.GameMode.SPECTATOR);
 					} else {
-						p.sendMessage("§cUSAGE > /gm <0|1|2|3>");
+						p.sendMessage("Â§cUSAGE > /gm <0|1|2|3>");
 					}
 					
 				}
@@ -39,23 +39,17 @@ public class GameMode implements CommandExecutor {
 					if(target != null) {
 						
 						if(args[0].equalsIgnoreCase("0") || args[0].equalsIgnoreCase("survival")) {
-							p.sendMessage("§e[FunDeads] §9Passage En Mode Survie à §E" + target.getName());
+							p.sendMessage("Â§e[FunDeads] Â§9Passage En Mode Survie Pour Â§e" + target.getName());
 							target.setGameMode(org.bukkit.GameMode.SURVIVAL);
-							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Survie Par §e" + p.getName());
+							target.sendMessage("Â§e[FunDeads] Â§9Vous avez Ã©tÃ© mis en Mode Survie Par Â§e" + p.getName());
 						} else if(args[0].equalsIgnoreCase("1") || args[0].equalsIgnoreCase("creative")) {
-							p.sendMessage("§e[FunDeads] §9Passage En Mode Créative à §e" + target.getName());
-							target.setGameMode(org.bukkit.GameMode.CREATIVE);
-							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Creative Par §e" + p.getName());
-						} else if(args[0].equalsIgnoreCase("2") || args[0].equalsIgnoreCase("adventure")) {
-							p.sendMessage("§e[FunDeads] §9Passage En Mode Adventure à §e" + target.getName());
-							target.setGameMode(org.bukkit.GameMode.ADVENTURE);
-							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Adventure Par §e" + p.getName());
+							target.sendMessage("Â§e[FunDeads] Â§9Vous avez Ã©tÃ© mis en Mode Adventure Par Â§e" + p.getName());
 						} else if(args[0].equalsIgnoreCase("3") || args[0].equalsIgnoreCase("spectator")) {
-							p.sendMessage("§e[FunDeads] §9Passage En Mode Spectateur à §e" + target.getName());
+							p.sendMessage("Â§e[FunDeads] Â§9Passage En Mode Spectateur Pour Â§e" + target.getName());
 							target.setGameMode(org.bukkit.GameMode.SPECTATOR);
-							target.sendMessage("§e[FunDeads] §9Vous avez été mis en Mode Spectateur Par §e" + p.getName());
+							target.sendMessage("Â§e[FunDeads] Â§9Vous avez Ã©tÃ© mis en Mode Spectateur Par Â§e" + p.getName());
 						} else {
-							p.sendMessage("§cUSAGE > /gm <0|1|2|3> <player>");
+							p.sendMessage("Â§cUSAGE > /gm <0|1|2|3> <player>");
 						}
 						
 					}
@@ -63,11 +57,11 @@ public class GameMode implements CommandExecutor {
 				}
 				
 				if(args.length == 0) {
-					p.sendMessage("§cUSAGE > /gm <0|1|2|3> <player>");
+					p.sendMessage("ï¿½cUSAGE > /gm <0|1|2|3> <player>");
 				}
 			} else {
 				
-				p.sendMessage("Vous n'avez pas accès à cette commande !");
+				p.sendMessage("Vous n'avez pas accï¿½s ï¿½ cette commande !");
 				
 			}
 		}

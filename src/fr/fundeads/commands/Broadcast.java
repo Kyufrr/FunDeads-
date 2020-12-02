@@ -27,9 +27,9 @@ public class Broadcast implements CommandExecutor {
 						bc.append(part + " ");
 					}
 					if(player.isOp()) {
-					Bukkit.broadcastMessage("§f[ §cMessage§f ]§e " + bc.toString());
+					Bukkit.broadcastMessage("Â§f[ Â§cMessageÂ§f ]e" + bc.toString());
 					} else {
-						Bukkit.broadcastMessage("§f[§c" + player.getName() + "§f]§e " + bc.toString());
+						Bukkit.broadcastMessage("Â§f[Â§e" + player.getName() + "Â§f]Â§e " + bc.toString());
 					}
 				}
 				

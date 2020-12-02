@@ -20,7 +20,7 @@ commands:
     description: Show The Time Actually
   gm:
     description: Gamemode <0|1|2|3>
-    permission: fundeads.gm
+    permission: fundeads.gamemode
   food:
     description: Food Max
     permission: fundeads.food
@@ -50,3 +50,9 @@ commands:
   freeze:
     description: Freeze An Player !
     permission: fundeads.freeze
+  day:
+    description: Set Day In The World !
+    permission: fundeads.day
+  invsee:
+    description: Open Inventory of a player.
+    permission: fundeads.invsee

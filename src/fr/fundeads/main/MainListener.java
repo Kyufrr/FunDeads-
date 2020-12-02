@@ -84,7 +84,7 @@ public class MainListener implements Listener {
 		player.teleport(player.getWorld().getSpawnLocation());
 		
 		
-		// Give De La boussole Admin
+		// Give the Compass Admin
 		ItemStack boussole = new ItemStack(Material.COMPASS, 1);
 		ItemMeta boussoleM = boussole.getItemMeta();
 		boussoleM.setDisplayName("§c[Menu]");

@@ -15,13 +15,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.fundeads.commands.Back;
 import fr.fundeads.commands.Broadcast;
+import fr.fundeads.commands.Day;
 import fr.fundeads.commands.Food;
 import fr.fundeads.commands.Freeze;
 import fr.fundeads.commands.GameMode;
 import fr.fundeads.commands.Heal;
 import fr.fundeads.commands.Heure;
 import fr.fundeads.commands.Home;
+import fr.fundeads.commands.Invsee;
 import fr.fundeads.commands.Menu;
+import fr.fundeads.commands.SetSpawn;
 import fr.fundeads.commands.Spawn;
 import fr.fundeads.commands.Vanish;
 import net.md_5.bungee.api.ChatColor;
@@ -52,18 +55,21 @@ public class Main extends JavaPlugin implements Listener {
 		getCommand("bc").setExecutor(new Broadcast());
 		getCommand("menu").setExecutor(new Menu());
 		getCommand("spawn").setExecutor(new Spawn());
+		getCommand("setspawn").setExecutor(new SetSpawn(this));
 		getCommand("heure").setExecutor(new Heure());
 		getCommand("gm").setExecutor(new GameMode());
 		getCommand("food").setExecutor(new Food());
 		getCommand("f").setExecutor(new Food());
 		getCommand("heal").setExecutor(new Heal());
 		getCommand("h").setExecutor(new Heal());
-		getCommand("back").setExecutor(new Back());
+		getCommand("back").setExecutor(new Back(this));
 		getCommand("home").setExecutor(new Home());
 		getCommand("sethome").setExecutor(new Home());
 		getCommand("delhome").setExecutor(new Home());
 		getCommand("vanish").setExecutor(new Vanish());
 		getCommand("freeze").setExecutor(new Freeze(this));
+		getCommand("day").setExecutor(new Day());
+		getCommand("invsee").setExecutor(new Invsee());
 		
 		recipeSaddle();
 		
@@ -76,10 +82,6 @@ public class Main extends JavaPlugin implements Listener {
 		
 		System.out.println(ChatColor.RED + "[FunDeads] The Plugin has been Disabled");
 	}
-	
-	public void onTab() {
-			
-		}
 	 
 	@EventHandler
     public void onPlayerMoveBlock(PlayerMoveEvent e){
@@ -91,7 +93,7 @@ public class Main extends JavaPlugin implements Listener {
         }
     }
 	
-	private void recipeSaddle() {
+	 private void recipeSaddle() {
 		
 		ItemStack obsidian = new ItemStack(Material.OBSIDIAN);
 		

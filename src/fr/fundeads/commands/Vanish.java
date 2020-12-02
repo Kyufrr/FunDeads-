@@ -25,14 +25,14 @@ public class Vanish implements CommandExecutor {
 				
 				//unvanish
 				vanished.remove(p);
-				p.sendMessage("§aYou have Been UnVanished");
+				p.sendMessage("Â§aYou have Been UnVanished");
 				
 			} else {
 				for(Player player : Bukkit.getOnlinePlayers()) {
 					player.hidePlayer(p);
 				}
 				vanished.add(p);
-				p.sendMessage("§aYou have Been Vanished");
+				p.sendMessage("Â§aYou have Been Vanished");
 			}
 			
 			return true;

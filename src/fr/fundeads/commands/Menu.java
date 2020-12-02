@@ -30,55 +30,55 @@ public class Menu implements CommandExecutor {
 		
 		if(args.length == 1) {
 			if(args[0].equalsIgnoreCase("admin") || args[0].equalsIgnoreCase("guia")) {
-				Inventory inv = Bukkit.createInventory(null, 18, "§c[Menu]");
+				Inventory inv = Bukkit.createInventory(null, 18, "Â§c[Menu]");
 				
 				ItemStack beacon = new ItemStack(Material.BEACON, 1);
 				ItemMeta BeaconM = beacon.getItemMeta();
-				BeaconM.setDisplayName("§aSend §fAn Message §cMaintenance.");
+				BeaconM.setDisplayName("Â§aSend Â§fAn Message Â§cMaintenance.");
 				beacon.setItemMeta(BeaconM);
 				
 				ItemStack anvil = new ItemStack(Material.ANVIL, 1);
 				ItemMeta anvilM = anvil.getItemMeta();
-				anvilM.setDisplayName("§8Activate §cThe §eWhitelist.");
+				anvilM.setDisplayName("Â§8Activate Â§cThe Â§eWhitelist.");
 				anvil.setItemMeta(anvilM);
 				
 				ItemStack feather = new ItemStack(Material.FEATHER, 1);
 				ItemMeta featherM = feather.getItemMeta();
-				featherM.setDisplayName("§9Désactivate §fThe §4Whitelist.");
+				featherM.setDisplayName("Â§9DÃ©sactivate Â§fThe Â§4Whitelist.");
 				feather.setItemMeta(featherM);
 				
 				ItemStack lava = new ItemStack(Material.LAVA_BUCKET, 1);
 				ItemMeta lavaM = lava.getItemMeta();
-				lavaM.setDisplayName("§cSTOP THE SERVER !");
+				lavaM.setDisplayName("Â§cSTOP THE SERVER !");
 				lavaM.addEnchant(Enchantment.DURABILITY, 200, true);
 				lavaM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 				lava.setItemMeta(lavaM);
 
 				ItemStack rl = new ItemStack(Material.REDSTONE_COMPARATOR, 1);
 				ItemMeta rlM = rl.getItemMeta();
-				rlM.setDisplayName("§aReload");
-				rlM.setLore(Arrays.asList("§l§4 (Probable Risk of Stopping [Cause: Plugins overload]!)"));
+				rlM.setDisplayName("Â§aReload");
+				rlM.setLore(Arrays.asList("Â§lÂ§4 (Probable Risk of Stopping [Cause: Plugins overload]!)"));
 				rl.setItemMeta(rlM);
 				
 				
 				ItemStack gm1 = new ItemStack(Material.WOOD_SWORD, 1);
 				ItemMeta gm1M = gm1.getItemMeta();
-				gm1M.setDisplayName("§aGamemode 1 (créative) !");
+				gm1M.setDisplayName("Â§aGamemode 1 (crÃ©ative) !");
 				gm1.setItemMeta(gm1M);
 				
 				ItemStack gm2 = new ItemStack(Material.STONE_SWORD, 1);
 				ItemMeta gm2M = gm2.getItemMeta();
-				gm2M.setDisplayName("§aGamemode 2 (aventure) !");
+				gm2M.setDisplayName("Â§aGamemode 2 (aventure) !");
 				gm2.setItemMeta(gm2M);
 				
 				ItemStack gm3 = new ItemStack(Material.GOLD_SWORD, 1);
 				ItemMeta gm3M = gm3.getItemMeta();
-				gm3M.setDisplayName("§aGamemode 3 (spectateur) !");
+				gm3M.setDisplayName("Â§aGamemode 3 (spectateur) !");
 				gm3.setItemMeta(gm3M);
 				
 				ItemStack gm0 = new ItemStack(Material.DIAMOND_SWORD, 1);
 				ItemMeta gm0M = gm0.getItemMeta();
-				gm0M.setDisplayName("§aGamemode 0 (survie) !");
+				gm0M.setDisplayName("Â§aGamemode 0 (survie) !");
 				gm0.setItemMeta(gm0M);
 				
 				inv.setItem(8, beacon);
@@ -94,7 +94,7 @@ public class Menu implements CommandExecutor {
 				if(player.isOp()) {
 				player.openInventory(inv);
 				} else {
-					player.sendMessage("§cFailure and Maths :/ (Access denied !)");
+					player.sendMessage("Â§cFailure and Maths :/ (Access denied !)");
 					System.out.println("[FunDeads] " + player.getName() + " as try to open the menu admin !");
 				}
 				
@@ -102,12 +102,12 @@ public class Menu implements CommandExecutor {
 			
 			if(args[0].equalsIgnoreCase("joueur") || args[0].equalsIgnoreCase("gui")) {
 				
-			Inventory inv = Bukkit.createInventory(null, 18, "§c[Menu]");
+			Inventory inv = Bukkit.createInventory(null, 18, "Â§c[Menu]");
 			
 			
 			ItemStack pranked = new ItemStack(Material.WOOD_STAIRS, 1);
 			ItemMeta prankedM = pranked.getItemMeta();
-			prankedM.setDisplayName("§cYou are Pranked !");
+			prankedM.setDisplayName("Â§cYou are Pranked !");
 			pranked.setItemMeta(prankedM);
 			
 			inv.setItem(0, pranked);
@@ -118,11 +118,11 @@ public class Menu implements CommandExecutor {
 		}
 		
 		if(args.length == 0) {
-			player.sendMessage("§cUSAGE > /menu <guia/gui>");
+			player.sendMessage("Â§cUSAGE > /menu <guia/gui>");
 		}
 		
 		if(args.length >= 2) {
-			player.sendMessage("§cUSAGE > /menu <guia/gui>");
+			player.sendMessage("Â§cUSAGE > /menu <guia/gui>");
 		}
 		
 		return false;

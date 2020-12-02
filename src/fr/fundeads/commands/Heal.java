@@ -16,7 +16,7 @@ public class Heal implements CommandExecutor {
 				player.setHealth(20);
 				player.setFoodLevel(20);
 				player.setFireTicks(0);
-				player.sendMessage("§e[FunDeads]§a You have been heal !");
+				player.sendMessage("Â§e[FunDeads]Â§a You have been heal !");
 			}
 		}
 		return false;
